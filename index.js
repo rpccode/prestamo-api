@@ -2,8 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import conectarDB from "./config/db.js";
-import veterinarioRoutes from "./routes/veterinarioRoutes.js";
-import pacienteRoutes from "./routes/pacienteRoutes.js";
+import usuarioRoutes from "./routes/usuarioRoutes.js";
+import clienteRoutes from "./routes/clienteRoutes.js";
 
 const app = express();
 app.use(express.json());
@@ -27,8 +27,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use("/api/veterinarios", veterinarioRoutes);
-app.use("/api/pacientes", pacienteRoutes);
+app.use("/api/Usuarios", usuarioRoutes);
+app.use("/api/Clientes", clienteRoutes);
 
 const PORT = process.env.PORT || 4000;
 

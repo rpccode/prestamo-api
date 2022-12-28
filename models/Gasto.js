@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-const ClienteSchema = mongoose.Schema(
+const GastoSchema = mongoose.Schema(
   {
     nombre: {
       type: String,
       required: true,
     },
-    propietario: {
+    cantidad: {
       type: String,
       required: true,
     },
-    email: {
+    categoria: {
       type: String,
       required: true,
     },
@@ -18,10 +18,6 @@ const ClienteSchema = mongoose.Schema(
       type: Date,
       required: true,
       default: Date.now(),
-    },
-    sintomas: {
-      type: String,
-      required: true,
     },
     usuario: {
       type: mongoose.Schema.Types.ObjectId,
@@ -33,6 +29,6 @@ const ClienteSchema = mongoose.Schema(
   }
 );
 
-const Cliente = mongoose.model("Cliente", ClienteSchema);
+const Gasto = mongoose.model("Gasto", GastoSchema);
 
-export default Cliente;
+export default Gasto;
